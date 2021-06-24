@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="assets/style/cursor.css" media="all" rel="stylesheet" type="text/css">
+    <title>Panorama Loading</title>
+</head>
+<body>
+    <svg id="cursor" width="20" height="20">
+        <defs>
+          <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f2c061"></stop>
+            <stop offset="100%" stop-color="#da1b60"></stop>
+          </linearGradient>
+        </defs>
+        <circle r="07" cx="10" cy="10" fill="none"></circle>
+        <line x1="0" y1="0" x2="20" y2="20"></line>
+        <line x1="0" y1="20" x2="20" y2="0"></line>
+  </svg>
+    <section class="scene">
+        <div class="sun"></div>
+        <div class="bg">
+            <img src="assets/img/police_car.gif" class="car1">
+            <img src="assets/img/police_car.gif" class="car2">
+            <img src="assets/img/gangster.gif" class="gangster">
+            <img src="assets/img/runner.gif" class="runner">
+        </div>
+        <audio id='song' volume='0.2' autoplay controls>
+            <source src="assets/music.mp3" type="audio/mpeg">
+          </audio>
+          <script>
+            var play = false;
+            var myAudio = document.getElementById("song");           
+            myAudio.volume = 0.2;      
+            function onKeyDown(event) {
+                    switch (event.keyCode) {
+                        case 32: //SpaceBar                    
+                            if (play) {
+                                myAudio.pause();
+                                play = false;
+                            } else {
+                                myAudio.play();
+                                play = true;
+                            }
+                            break;
+                    }
+              return false;
+            }
+            window.addEventListener("keydown", onKeyDown, false);
+        </script>
+    </section>
+    <script>
+        const sun = document.querySelector('.sun');
+        const body = document.querySelector('body');
+        sun.onclick = function (){
+            body.classList.toggle('dark')
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="js/plugins.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

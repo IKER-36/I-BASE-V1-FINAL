@@ -1,0 +1,20 @@
+@font-face {
+	font-family: bankgothic;
+	src: url('./bankgothic.ttf');
+}
+
+@font-face {
+	font-family: DoHyeon;
+	src: url('./DoHyeon-Regular.ttf');
+}
+
+.streetname{
+    position: absolute;
+    top: 10px;
+    width: 99%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: DoHyeon;
+    text-shadow: 1px 1px 4px black;
+}

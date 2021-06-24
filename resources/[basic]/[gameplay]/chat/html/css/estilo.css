@@ -1,0 +1,194 @@
+.color-0 {
+	color: #fff
+}
+
+.color-1 {
+	color: #f44
+}
+
+.color-2 {
+	color: #9c0
+}
+
+.color-3 {
+	color: #fb3
+}
+
+.color-4 {
+	color: #09c
+}
+
+.color-5 {
+	color: #33b5e5
+}
+
+.color-6 {
+	color: #a6c
+}
+
+.color-8 {
+	color: #c00
+}
+
+.color-9 {
+	color: #cc0068
+}
+
+* {
+	font-family: 'Muli', sans-serif;
+	text-shadow: 2px 1px #000;
+	font-size: medium;
+	margin: 0;
+	padding: 0
+}
+
+.no-grow {
+	flex-grow: 0
+}
+
+em {
+	font-style: medium
+}
+
+#app {
+	font-family: 'Muli', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #fff
+}
+
+.chat-window {
+	position: absolute;
+	top: 3%;
+	left: .8%;
+	width: 38%;
+	height: 29%;
+	max-width: 1000px;
+	border-radius: 5px;
+	-webkit-animation-duration: 2s
+}
+
+.messagebox {
+	padding: 0;
+	margin-bottom: 0;
+	width: fit-content;
+	animation-duration: .5s;
+	animation-fill-mode: both;
+	animation-name: fadeInBottom
+}
+
+.message {
+	margin-left: 5px;
+	color: #fff
+}
+
+@-webkit-keyframes fadein {
+	from {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
+}
+
+@keyframes fadeInBottom {
+	from {
+		opacity: 0;
+		transform: translateX(100%)
+	}
+	to {
+		opacity: 1
+	}
+}
+
+.chat-messages {
+	position: relative;
+	height: 95%;
+	font-size: 1.62vh;
+	margin: .2%;
+	overflow-x: hidden;
+	overflow-y: hidden
+}
+
+.chat-input {
+	font-size: 1.65vh;
+	position: absolute;
+	border-radius: 5px;
+	top: 32%;
+	left: .8%;
+	width: 38%;
+	max-width: 1000px;
+	box-sizing: border-box
+}
+
+.prefix {
+	font-size: 1.8vh;
+	position: absolute;
+	margin-top: .5%;
+	left: .208%
+}
+
+textarea {
+	font-size: 1.65vh;
+	display: block;
+	box-sizing: border-box;
+	padding: 1%;
+	padding-left: 3.5%;
+	color: #fff;
+	background-color: rgba(44, 62, 80, 0.699);
+	border-radius: 5px;
+	width: 100%;
+	border-width: 0;
+	height: 3.15%;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.styled {
+	border-radius: 2px;
+	border-left: 4px solid #ba00aa
+}
+
+textarea:focus,
+input:focus {
+	outline: none
+}
+
+.msg {
+	margin-bottom: .28%
+}
+
+.multiline {
+	white-space: pre-line
+}
+
+.suggestions {
+	list-style-type: none;
+	padding: .5%;
+	padding-left: 1.4%;
+	font-size: 1.65vh;
+	box-sizing: border-box;
+	color: #fff;
+	background-color: rgba(44, 62, 80, 1.0);
+	width: 100%
+}
+
+.help {
+	color: #b0bbbd
+}
+
+.disabled {
+	color: #8d8d8d
+}
+
+.suggestion {
+	margin-bottom: .5%
+}
+
+.hidden {
+	display: none
+}
+
+.SystemMSG {
+	background-color: red
+}

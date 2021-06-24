@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold" title="roboto">
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<title>mumble-voip</title>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+		*{
+			font-family: 'Do Hyeon', sans-serif;
+		}
+        .info-container {
+			letter-spacing: 1px;
+			font-weight: 100;
+            position: absolute;
+            bottom: 0.5%;
+            right: 5%;
+            text-align: right;
+            padding: 5px;
+            font-family: font;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            font-size: 0.8vw;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+        }
+        
+        .talking {
+            color: rgb(150, 0, 187);
+        }
+	</style>
+	
+	<script type="text/javascript">
+		let speakerEnabled = true;
+		window.addEventListener("message", function (event) {
+			var item = event.data;
+			// if (item.show) { $("body").show() } else { $("body").hide() }
+
+			if (item.sound && item.volume) {
+				let snd = document.getElementById(item.sound);
+				snd.load();
+				snd.volume = item.volume;
+				snd.play();
+			}
+
+			if (item.speakerOption != null) {
+				speakerEnabled = item.speakerOption;
+			}
+
+			if (item.mode) {
+				let modeElem = document.getElementById("voip-mode");
+
+				modeElem.innerHTML = item.mode + (item.radioActive ? " en radio" : "");
+
+				if (item.talking != null) {
+					if (item.talking) {
+						modeElem.className = "talking"
+					} else {
+						modeElem.className = ""
+					}
+				}
+			}
+
+			if (item.radio != null) {
+				let radioElem = document.getElementById("voip-radio");
+
+				if (item.radio > 0 || isNaN(item.radio)) {
+					radioElem.innerHTML = "Radio: " + item.radio + (!isNaN(item.radio) ? " MHz" : "");
+				} else {
+					radioElem.innerHTML = "";
+				}
+			}
+
+			if (item.call != null) {
+				let callElem = document.getElementById("voip-call");
+
+				if (item.call > 0) {
+					if (speakerEnabled) {
+						callElem.innerHTML = "[Llamada] [" + (item.speaker ? "🔊" : "🔈") + "] " + item.call;
+					} else {
+						callElem.innerHTML = "[Llamada] " + item.call;
+					}
+				} else {
+					callElem.innerHTML = "";
+				}
+			}
+
+			// Abrir y cerrar voz
+
+			if (event.data.action == "cerrar") {
+				var selector = document.querySelector("#cuerpo")
+				selector.style = "display:none;"
+			}
+
+			if (event.data.action == "abrir") {
+				var selector = document.querySelector("#cuerpo")
+				selector.style = "display:block;"
+			}
+			// Fin
+		});
+	</script>
+</head>
+
+<body id="cuerpo">
+	<audio id="audio_on" src="mic_click_on.ogg"></audio>
+	<audio id="audio_off" src="mic_click_off.ogg"></audio>
+	<div class="info-container">
+		<div>Voz: <span id="voip-mode"></span></div>
+		<div id="voip-radio"></div>
+		<div id="voip-call"></div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+#page {
+	z-index: 1;
+	width: 1716px;
+	min-height: 1060px;
+	background-image: none;
+	border-width: 0;
+	border-color: #000;
+	background-color: transparent;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto
+}
+
+#u695 {
+	z-index: 2;
+	width: 282px;
+	height: 99px;
+	position: fixed;
+	top: 0;
+	right: 0
+}
+
+#u714 {
+	z-index: 3;
+	width: 71px;
+	height: 21px;
+	position: fixed;
+	top: 177px;
+	right: 20px
+}
+
+#u717-4 {
+	z-index: 4;
+	width: 58px;
+	min-height: 12px;
+	position: fixed;
+	top: 179px;
+	right: 26px
+}
+
+#u720-4 {
+	z-index: 8;
+	width: 219px;
+	min-height: 12px;
+	position: fixed;
+	top: 176px;
+	right: 97px
+}
+
+#u751 {
+	z-index: 12;
+	width: 71px;
+	height: 21px;
+	position: fixed;
+	top: 201px;
+	right: 20px
+}
+
+#u752-4 {
+	z-index: 13;
+	width: 58px;
+	min-height: 12px;
+	position: fixed;
+	top: 203px;
+	right: 26px
+}
+
+#u753-4 {
+	z-index: 17;
+	width: 219px;
+	min-height: 12px;
+	position: fixed;
+	top: 201px;
+	right: 97px
+}
+
+#u760 {
+	z-index: 21;
+	width: 71px;
+	height: 21px;
+	position: fixed;
+	top: 128px;
+	right: 20px
+}
+
+#u761-4 {
+	z-index: 22;
+	width: 58px;
+	min-height: 12px;
+	position: fixed;
+	top: 130px;
+	right: 26px
+}
+
+#u762-4 {
+	z-index: 26;
+	width: 219px;
+	min-height: 12px;
+	position: fixed;
+	top: 127px;
+	right: 97px
+}
+
+#u769 {
+	z-index: 30;
+	width: 71px;
+	height: 21px;
+	position: fixed;
+	top: 152px;
+	right: 20px
+}
+
+#u770-4 {
+	z-index: 31;
+	width: 58px;
+	min-height: 12px;
+	position: fixed;
+	top: 154px;
+	right: 26px
+}
+
+#u771-4 {
+	z-index: 35;
+	width: 219px;
+	min-height: 12px;
+	position: fixed;
+	top: 152px;
+	right: 97px
+}
+
+#u778 {
+	z-index: 39;
+	width: 71px;
+	height: 21px;
+	position: fixed;
+	top: 103px;
+	right: 20px
+}
+
+#u779-4 {
+	z-index: 40;
+	width: 58px;
+	min-height: 12px;
+	position: fixed;
+	top: 105px;
+	right: 26px
+}
+
+#u780-4 {
+	z-index: 44;
+	width: 219px;
+	min-height: 12px;
+	position: fixed;
+	top: 103px;
+	right: 97px
+}
+
+.html {
+	background: #fff url(../images/20201123202640_1.jpg?crc=3998716446) repeat left top scroll
+}
+
+body {
+	position: relative;
+	min-width: 1716px
+}
+
+#u695 {
+	opacity: 1;
+	background: url(logo.png) no-repeat center center;
+	background-size: contain
+}
+
+#u714 {
+	background-color: #7d7d7d;
+	background-color: rgba(35, 35, 35, .59);
+	border-radius: 10px;
+	-pie-background: rgba(35, 35, 35, .59)
+}
+
+#u751 {
+	background-color: #7d7d7d;
+	background-color: rgba(35, 35, 35, .59);
+	border-radius: 10px;
+	-pie-background: rgba(35, 35, 35, .59)
+}
+
+#u760 {
+	background-color: #7d7d7d;
+	background-color: rgba(35, 35, 35, .59);
+	border-radius: 10px;
+	-pie-background: rgba(35, 35, 35, .59)
+}
+
+#u769 {
+	background-color: #7d7d7d;
+	background-color: rgba(35, 35, 35, .59);
+	border-radius: 10px;
+	-pie-background: rgba(35, 35, 35, .59)
+}
+
+#u778 {
+	background-color: #7d7d7d;
+	background-color: rgba(35, 35, 35, .59);
+	border-radius: 10px;
+	-pie-background: rgba(35, 35, 35, .59)
+}
+
+#u717-4,
+#u752-4,
+#u761-4,
+#u770-4,
+#u779-4 {
+	background-color: transparent;
+	text-align: center;
+	color: #fff;
+	font-weight: 700
+}
+
+#u720-4,
+#u753-4,
+#u762-4,
+#u771-4,
+#u780-4 {
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 16px;
+	text-align: right;
+	color: #e7e7e7;
+	font-weight: 700
+}
+
+html {
+	min-height: 100%;
+	min-width: 100%;
+	-ms-text-size-adjust: none
+}
+
+body,
+div,
+p {
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	border-style: solid;
+	border-color: transparent;
+	-webkit-transform-origin: left top;
+	-ms-transform-origin: left top;
+	-o-transform-origin: left top;
+	transform-origin: left top;
+	background-repeat: no-repeat
+}
+
+body {
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+	text-align: left;
+	font-size: 11px;
+	line-height: 17px;
+	word-wrap: break-word;
+	text-rendering: optimizeLegibility;
+	-moz-font-feature-settings: 'liga';
+	-ms-font-feature-settings: 'liga';
+	-webkit-font-feature-settings: 'liga';
+	font-feature-settings: 'liga'
+}
+
+.clearfix:after {
+	content: "\0020";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both
+}
+
+[data-whatinput=mouse] :focus,
+[data-whatinput=touch] :focus {
+	outline: 0
+}
+
+p {
+	max-height: 1000000px
+}
+
+.verticalspacer {
+	clear: both
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	body {
+		text-rendering: auto
+	}
+}

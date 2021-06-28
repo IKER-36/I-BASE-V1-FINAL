@@ -9,9 +9,15 @@ This is our oficial discord to contact us: ðŸ¤– https://discord.gg/2cFWKz8GAA ðŸ
 First set your key (https://keymaster.fivem.net) <br>
 Set your SteamApiKey <br>
 Set your FiveM ID to admin perms in cfg ( ex: add_principal identifier.fivem:00000 )  <br>
-Set the database path and use (MysqlServer or MariaBD recommendation, not Xampp :)) <br>
+Set the database path and use (MysqlServer or MariaBD recommendation, not Xampp :)) (https://brouznouf.github.io/fivem-mysql-async/config/) <br>
 Put the path in the run.cmd <br>
 In the first one put the artifacts, recommendation to put them in a folder called "dlls" in C: (The recommended ones) <br>
+
+# Needs
+
+MariaBD - https://brouznouf.github.io/fivem-mysql-async/
+Heidi SQL - https://www.heidisql.com/
+
 
 # Extra
 

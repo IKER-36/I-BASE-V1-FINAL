@@ -8,12 +8,12 @@ Config.Framework_perms = { --You can choose multiple permission group to have ac
     ['helper'] = false,
 }
 
-Config.Command = 'timemenu' --Customise the command name to open the UI.
+Config.Command = 'easytime' --Customise the command name to open the UI.
 Config.Notification_Type = 'chat' --[ 'chat' / 'mythic_old' / 'mythic_new' / 'esx' / 'custom' ] Choose your notification type.
-Config.Language = 'ES' --[ 'EN' / 'FR' / 'ES' ] Choose your preferred language.
-Config.NUI_keepinput = false --Do you want to be able to walk around when the UI is open?
+Config.Language = 'EN' --[ 'EN' / 'FR' / 'ES' ] Choose your preferred language.
+Config.NUI_keepinput = true --Do you want to be able to walk around when the UI is open?
 
-Config.TimeCycleSpeed = 2 --(in seconds) Changing this value will effects the day/night time cycle, increasing the number slows timw down, incresing speeds it up. Right now its similar to the default gta5 time cycle. (48 mins for 1 full day cycle).
+Config.TimeCycleSpeed = 2 --(in seconds) Changing this value will effects the day/night time cycle, decreasing slows it down, incresing speeds it up. Right now its similar to the default gta5 time cycle.
 Config.DynamicWeather = true --Do you want to allow dynamic weather?
 Config.DynamicWeather_time = 10 --(in minutes) If dynamic weather is enabled, this value is how long until the weather changes.
 Config.RainChance = 10 --The percent chance for it to rain out of 100.

@@ -4,6 +4,10 @@ I made this simple base using es_extended 1 final (like 1.2) to bring a dev serv
 
 This is our oficial discord to contact us: 🤖 https://discord.gg/2cFWKz8GAA 🤖
 
+# Video How to Install
+
+https://www.youtube.com/watch?v=WxArPvqWCNc <br>
+
 # How to install
 
 First set your key (https://keymaster.fivem.net) <br>

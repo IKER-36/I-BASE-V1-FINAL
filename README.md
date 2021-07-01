@@ -42,9 +42,8 @@ ADM-SYSTEM - https://github.com/Blumlaut/EasyAdmin ( and esx_adminplus ) <br>
 
 
 # Preview
-
+![image](https://user-images.githubusercontent.com/63476973/124119957-755c2780-da73-11eb-8c35-face275ef5f2.png)
 ![image](https://user-images.githubusercontent.com/63476973/123319251-769bca80-d530-11eb-914a-d6a9ec25aa01.png)
-![image](https://user-images.githubusercontent.com/63476973/123319395-a5b23c00-d530-11eb-9565-0894bf9e698d.png)
-![image](https://user-images.githubusercontent.com/63476973/123319434-b1056780-d530-11eb-8b29-79e05bff8c28.png)
+![image](https://user-images.githubusercontent.com/63476973/124120033-8e64d880-da73-11eb-9c20-20c9389e63fc.png)
 
 

@@ -1,0 +1,49 @@
+.account-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	position: absolute;
+	top: 210px;
+	right: 20px;
+}
+
+.balance-wrap {
+	height: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-bottom: 2px solid rgb(255, 0, 89);
+}
+
+.balance-type {
+	width: 35px;
+	display: flex;
+	height: 28px;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	background-color: rgba(0, 0, 0, 0.501);
+}
+
+.balance-amount {
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	color: white;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.icon-wrap {
+	padding: 5px 15px 5px 5px;
+}
+
+.balance-currency {
+	color: white;
+	font-size: 18px;
+	font-weight: 600;
+}

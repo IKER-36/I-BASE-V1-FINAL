@@ -1,0 +1,221 @@
+.header-wrap {
+    padding: 1px 5px;
+    grid-gap: 12px;
+    gap: 12px;
+    top: 60px;
+    background-color: rgba(0, 0, 0, .3);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    border-left: 2px solid #006965
+}
+
+.header-wrap,
+.stat-wrap {
+    display: flex;
+    position: absolute;
+    right: 20px
+}
+
+.stat-wrap {
+    flex-direction: row;
+    grid-gap: 10px;
+    gap: 10px;
+    top: 110px
+}
+
+.stat-modal {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .3);
+    border-bottom: 2px solid #006965
+}
+
+.stat-icon {
+    position: absolute;
+    font-size: 18px
+}
+
+.active {
+    color: #ff0059
+}
+
+.inactive {
+    color: #fff
+}
+
+.stat-value {
+    width: 30px;
+    max-height: 93.5%;
+    position: absolute;
+    bottom: 2px;
+    background-color: #00696691
+}
+
+.job-wrap {
+    height: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    grid-gap: 15px;
+    gap: 15px;
+    position: absolute;
+    top: 160px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, .3);
+    border-bottom: 2px solid #006965
+}
+
+.job-icon,
+.job-wrap {
+    display: flex;
+    align-items: center
+}
+
+.job-icon {
+    width: 35px;
+    height: 28px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, .501)
+}
+
+.job-icon,
+.job-name {
+    justify-content: center
+}
+
+.job-name {
+    padding-right: 20px;
+    display: flex;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600
+}
+
+.account-wrap {
+    flex-direction: column;
+    position: absolute;
+    top: 210px;
+    right: 20px
+}
+
+.account-wrap,
+.balance-wrap {
+    display: flex;
+    grid-gap: 15px;
+    gap: 15px
+}
+
+.balance-wrap {
+    height: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, .3);
+    border-bottom: 2px solid #006965
+}
+
+.balance-type {
+    width: 35px;
+    height: 28px;
+    align-items: center;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, .501)
+}
+
+.balance-amount,
+.balance-type {
+    display: flex;
+    justify-content: center
+}
+
+.balance-amount {
+    width: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600
+}
+
+.icon-wrap {
+    padding: 5px 15px 5px 5px
+}
+
+.balance-currency {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600
+}
+
+.check {
+    width: 100%;
+    height: 100%
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column
+}
+
+@media(min-width:1280px)and (min-height:720px) {
+    html {
+        font-size: 11px
+    }
+}
+
+@media(min-width:1920px)and (min-height:1080px) {
+    html {
+        font-size: 16px
+    }
+}
+
+@media(min-width:2560px)and (min-height:1440px) {
+    html {
+        font-size: 22px
+    }
+}
+
+@media(min-width:3840px)and (min-height:2160px) {
+    html {
+        font-size: 33px
+    }
+}
+
+
+/*# sourceMappingURL=main.css.map */

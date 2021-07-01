@@ -1,0 +1,13 @@
+.header-wrap {
+	padding: 1px 5px 1px 5px;
+	display: flex;
+	gap: 12px;
+	position: absolute;
+	top: 60px;
+	right: 20px;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
+	font-size: 22px;
+	font-weight: 600;
+	border-left: 2px solid rgb(255, 0, 89);
+}

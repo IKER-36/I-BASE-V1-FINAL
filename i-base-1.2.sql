@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla es_extended.addon_account_data: ~12 rows (aproximadamente)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
@@ -65,7 +65,11 @@ INSERT IGNORE INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`)
 	(8, 'society_families', 0, NULL),
 	(9, 'society_mafia', 0, NULL),
 	(10, 'society_thelost', 0, NULL),
-	(11, 'society_vagos', 0, NULL);
+	(11, 'society_vagos', 0, NULL),
+	(13, 'caution', 0, 'f0e176ec5a87adad3df08d798b614090645a655a'),
+	(14, 'property_black_money', 0, 'f0e176ec5a87adad3df08d798b614090645a655a'),
+	(15, 'caution', 0, 'b449807e8ed169136d7357be7390e700da991dc6'),
+	(16, 'property_black_money', 0, 'b449807e8ed169136d7357be7390e700da991dc6');
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.addon_inventory
@@ -173,9 +177,9 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla es_extended.datastore_data: ~14 rows (aproximadamente)
+-- Volcando datos para la tabla es_extended.datastore_data: ~19 rows (aproximadamente)
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
 INSERT IGNORE INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(2, 'society_ambulance', NULL, '{}'),
@@ -185,7 +189,18 @@ INSERT IGNORE INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(10, 'society_families', NULL, '{}'),
 	(11, 'society_mafia', NULL, '{}'),
 	(12, 'society_thelost', NULL, '{}'),
-	(13, 'society_vagos', NULL, '{}');
+	(13, 'society_vagos', NULL, '{}'),
+	(15, 'society_police', NULL, '{}'),
+	(16, 'user_ears', 'f0e176ec5a87adad3df08d798b614090645a655a', '{}'),
+	(17, 'property', 'f0e176ec5a87adad3df08d798b614090645a655a', '{}'),
+	(18, 'user_glasses', 'f0e176ec5a87adad3df08d798b614090645a655a', '{}'),
+	(19, 'user_helmet', 'f0e176ec5a87adad3df08d798b614090645a655a', '{}'),
+	(20, 'user_mask', 'f0e176ec5a87adad3df08d798b614090645a655a', '{}'),
+	(21, 'property', 'b449807e8ed169136d7357be7390e700da991dc6', '{}'),
+	(22, 'user_ears', 'b449807e8ed169136d7357be7390e700da991dc6', '{}'),
+	(23, 'user_mask', 'b449807e8ed169136d7357be7390e700da991dc6', '{}'),
+	(24, 'user_helmet', 'b449807e8ed169136d7357be7390e700da991dc6', '{}'),
+	(25, 'user_glasses', 'b449807e8ed169136d7357be7390e700da991dc6', '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.dpkeybinds
@@ -207,6 +222,9 @@ CREATE TABLE IF NOT EXISTS `dpkeybinds` (
 
 -- Volcando datos para la tabla es_extended.dpkeybinds: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `dpkeybinds` DISABLE KEYS */;
+INSERT IGNORE INTO `dpkeybinds` (`id`, `keybind1`, `emote1`, `keybind2`, `emote2`, `keybind3`, `emote3`, `keybind4`, `emote4`, `keybind5`, `emote5`, `keybind6`, `emote6`) VALUES
+	('steam:11000011b415c99', 'num4', '', 'num5', '', 'num6', '', 'num7', '', 'num8', '', 'num9', ''),
+	('steam:1100001091cc9b4', 'num4', '', 'num5', '', 'num6', '', 'num7', '', 'num8', '', 'num9', '');
 /*!40000 ALTER TABLE `dpkeybinds` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.gangmissions
@@ -358,6 +376,58 @@ INSERT IGNORE INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `sa
 	(45, 'thelost', 1, 'boss', 'GangBoss', 0, '{}', '{}');
 /*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
 
+-- Volcando estructura para tabla es_extended.kc_bans
+CREATE TABLE IF NOT EXISTS `kc_bans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(100) NOT NULL DEFAULT '0',
+  `license` varchar(100) NOT NULL,
+  `reason` varchar(250) NOT NULL DEFAULT '0',
+  `name` varchar(100) NOT NULL DEFAULT '0',
+  `ip` varchar(16) NOT NULL DEFAULT '127.0.0.1',
+  `admin_name` varchar(100) NOT NULL DEFAULT '0',
+  `admin_identifier` varchar(100) NOT NULL DEFAULT '0',
+  `time` varchar(50) NOT NULL DEFAULT '0',
+  `date` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla es_extended.kc_bans: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `kc_bans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `kc_bans` ENABLE KEYS */;
+
+-- Volcando estructura para tabla es_extended.kc_jails
+CREATE TABLE IF NOT EXISTS `kc_jails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `license` varchar(100) NOT NULL DEFAULT '0',
+  `name` varchar(100) NOT NULL DEFAULT '0',
+  `admin_name` varchar(100) NOT NULL DEFAULT '0',
+  `admin_identifier` varchar(100) NOT NULL DEFAULT '0',
+  `time` varchar(100) NOT NULL DEFAULT '0',
+  `time_s` varchar(100) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla es_extended.kc_jails: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `kc_jails` DISABLE KEYS */;
+/*!40000 ALTER TABLE `kc_jails` ENABLE KEYS */;
+
+-- Volcando estructura para tabla es_extended.kc_warns
+CREATE TABLE IF NOT EXISTS `kc_warns` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(100) NOT NULL DEFAULT '0',
+  `license` varchar(100) NOT NULL DEFAULT '0',
+  `reason` varchar(250) NOT NULL DEFAULT '0',
+  `name` varchar(250) NOT NULL DEFAULT '0',
+  `admin_name` varchar(250) NOT NULL DEFAULT '0',
+  `admin_identifier` varchar(100) NOT NULL DEFAULT '0',
+  `timestamp` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla es_extended.kc_warns: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `kc_warns` DISABLE KEYS */;
+/*!40000 ALTER TABLE `kc_warns` ENABLE KEYS */;
+
 -- Volcando estructura para tabla es_extended.licenses
 CREATE TABLE IF NOT EXISTS `licenses` (
   `type` varchar(60) NOT NULL,
@@ -365,7 +435,7 @@ CREATE TABLE IF NOT EXISTS `licenses` (
   PRIMARY KEY (`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla es_extended.licenses: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla es_extended.licenses: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `licenses` DISABLE KEYS */;
 INSERT IGNORE INTO `licenses` (`type`, `label`) VALUES
 	('weed_processing', 'Weed Processing License');
@@ -381,7 +451,7 @@ CREATE TABLE IF NOT EXISTS `owned_properties` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla es_extended.owned_properties: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla es_extended.owned_properties: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `owned_properties` DISABLE KEYS */;
 /*!40000 ALTER TABLE `owned_properties` ENABLE KEYS */;
 
@@ -645,8 +715,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla es_extended.users: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla es_extended.users: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT IGNORE INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `skin`, `status`, `is_dead`, `phone_number`, `last_property`) VALUES
+	('b449807e8ed169136d7357be7390e700da991dc6', '{"black_money":0,"bank":50000,"money":0}', 'user', '[]', 'unemployed', 0, '[]', '{"z":31.2,"heading":205.8,"x":-269.4,"y":-955.3}', NULL, NULL, NULL, NULL, NULL, NULL, '[{"val":999000,"name":"hunger","percent":99.9},{"val":999250,"name":"thirst","percent":99.925}]', 0, '756-1597', NULL),
+	('f0e176ec5a87adad3df08d798b614090645a655a', '{"black_money":0,"bank":50320,"money":0}', 'admin', '[]', 'ambulance', 1, '[]', '{"z":29.4,"heading":174.8,"x":23.2,"y":-949.7}', 'Jhon', 'Jhon', '12/12/1988', 'm', 82, '{"age_1":0,"chest_2":0,"bodyb_3":-1,"chin_2":0,"shoes_1":0,"dad":0,"nose_2":0,"nose_4":0,"torso_2":0,"watches_1":-1,"face_md_weight":50,"hair_color_2":0,"mask_1":0,"jaw_2":0,"makeup_1":0,"neck_thickness":0,"moles_1":0,"eyebrows_5":0,"glasses_2":0,"eyebrows_3":0,"eyebrows_4":0,"age_2":0,"hair_color_1":0,"nose_3":0,"ears_2":0,"hair_2":0,"chest_1":0,"beard_4":0,"skin_md_weight":50,"complexion_2":0,"cheeks_2":0,"helmet_2":0,"sun_1":0,"nose_6":0,"tshirt_1":0,"blemishes_1":0,"sex":0,"lipstick_3":0,"complexion_1":0,"ears_1":-1,"bracelets_1":-1,"lipstick_1":0,"chin_3":0,"bracelets_2":0,"pants_2":0,"bodyb_1":-1,"lipstick_2":0,"bodyb_4":0,"glasses_1":0,"eye_color":0,"blush_2":0,"arms":0,"chin_1":0,"helmet_1":-1,"bodyb_2":0,"nose_5":0,"bags_1":0,"blemishes_2":0,"chain_1":0,"makeup_3":0,"bags_2":0,"eyebrows_2":0,"arms_2":0,"chin_4":0,"makeup_4":0,"makeup_2":0,"bproof_1":0,"hair_1":0,"pants_1":0,"lipstick_4":0,"mask_2":0,"tshirt_2":0,"nose_1":0,"moles_2":0,"beard_1":0,"eye_squint":0,"cheeks_1":0,"blush_3":0,"jaw_1":0,"decals_1":0,"beard_3":0,"blush_1":0,"beard_2":0,"bproof_2":0,"cheeks_3":0,"lip_thickness":0,"eyebrows_1":0,"chain_2":0,"eyebrows_6":0,"shoes_2":0,"chest_3":0,"decals_2":0,"torso_1":0,"watches_2":0,"sun_2":0,"mom":21}', '[{"val":469600,"name":"hunger","percent":46.96},{"val":602200,"name":"thirst","percent":60.22}]', 0, '118-9665', NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.user_licenses

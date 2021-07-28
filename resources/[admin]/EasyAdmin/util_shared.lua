@@ -1,5 +1,6 @@
 permissions = {
-	["ban"] = false,
+	["ban.temporary"] = false,
+	["ban.permanent"] = false,
 	["kick"] = false,
 	["spectate"] = false,
 	["unban"] = false,
@@ -13,8 +14,46 @@ permissions = {
 	["mute"] = false,
 	["teleport.everyone"] = false,
 	["warn"] = false,
+	["cleanup.cars"] = false,
+	["cleanup.props"] = false,
+	["cleanup.peds"] = false,
+	["reports.view"] = false,
+	["reports.process"] = false,
+	["permissions.view"] = false,
+	["permissions.write"] = false
 }
 
+
+function PrintDebugMessage(msg,level)
+	loglevel = (GetConvarInt("ea_logLevel", 1))
+	if not level or not tonumber(level) then level = 3 end
+
+	if level == 1 and loglevel >= level then -- ERROR Loglevel
+		Citizen.Trace("^1"..GetCurrentResourceName().."^7: "..msg.."^7\n")
+	elseif level == 2 and loglevel >= level then -- WARN Loglevel
+		Citizen.Trace("^3"..GetCurrentResourceName().."^7: "..msg.."^7\n")
+	elseif level == 3 and loglevel >= level then -- INFO Loglevel 
+		Citizen.Trace("^0"..GetCurrentResourceName().."^7: "..msg.."^7\n")
+	elseif level == 4 and loglevel >= level then -- DEV Loglevel
+		Citizen.Trace("^7"..GetCurrentResourceName().."^7: "..msg.."^7\n")
+	elseif level > 4 and loglevel >= level then -- anything above 4 shouldn't exist, but kept just in case
+		Citizen.Trace("^5"..GetCurrentResourceName().."^7: "..msg.."^7\n")
+	end
+end
+
+if IsDuplicityVersion() then
+	if GetConvar("ea_enableDebugging", "false") ~= "false" or GetConvarInt("ea_logLevel", 1) ~= 1 then
+		SetConvar("ea_enableDebugging", "false")
+		if GetConvarInt("ea_logLevel", 1) == 1 then
+			SetConvar("ea_logLevel", 3)
+		end
+		if GetConvarInt("ea_logLevel", 1) > 1 then
+			PrintDebugMessage("Debug Messages Enabled, Verbosity is ^2"..GetConvarInt("ea_logLevel", 1).."^7.", 2)
+		end
+	else
+		enableDebugging = false
+	end
+end
 
 function GetLocalisedText(string)
 	if not strings then return "Strings not Loaded yet!" end
@@ -26,15 +65,19 @@ function GetLocalisedText(string)
 	end
 end
 
-function PrintDebugMessage(msg)
-	if enableDebugging then -- make sure debugging is enabled before Proceding
-		Citizen.Trace("^1"..GetCurrentResourceName().."^7: "..msg.."^7\n")
-	else
-		if GetConvar("ea_enableDebugging", "false") == "true" then
-			enableDebugging = true
-			PrintDebugMessage(msg) -- recursion?
+function formatDateString(string)
+	local dateFormat = GetConvar("ea_dateFormat", '%d/%m/%Y 	%H:%M:%S')
+	return os.date(dateFormat, string)
+end
+
+function formatShortcuts(thisstring)
+	local cleanString = string.gsub(string.lower(thisstring), " ", "")
+	for shortcut,value in pairs(MessageShortcuts) do
+		if string.lower(shortcut) == cleanString then
+			thisstring = value
 		end
 	end
+	return thisstring
 end
 
 function math.round(num, numDecimalPlaces)
@@ -71,4 +114,40 @@ function Set (list)
 	local set = {}
 	for _, l in ipairs(list) do set[l] = true end
 	return set
+end
+
+-- Convert a lua table into a lua syntactically correct string
+function table_to_string(tbl)
+    local result = "{"
+    for k, v in pairs(tbl) do
+        -- Check the key type (ignore any numerical keys - assume its an array)
+        if type(k) == "string" then
+            result = result.."[\""..k.."\"]".."="
+        end
+
+        -- Check the value type
+        if type(v) == "table" then
+            result = result..table_to_string(v)
+        elseif type(v) == "boolean" then
+            result = result..tostring(v)
+		elseif type(v) == "function" then
+			result = result..tostring(v)
+		else
+            result = result.."\""..v.."\""
+        end
+        result = result..","
+    end
+    -- Remove leading commas from the result
+    if result ~= "" then
+        result = result:sub(1, result:len()-1)
+    end
+    return result.."}"
+end
+
+function mergeTables(t1, t2)
+	local t = t1
+	for i,v in pairs(t2) do
+		table.insert(t, v)
+	end
+	return t
 end

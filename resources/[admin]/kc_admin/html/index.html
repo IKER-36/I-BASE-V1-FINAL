@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="custom.min.css">
+
+    <style>
+        body,
+        html {
+            overflow: hidden;
+            background-color: transparent;
+        }
+        
+        #notify_container {
+            position: absolute;
+            margin-top: -50px;
+            margin-left: 850px;
+            width: 400px;
+        }
+        
+        #admin {
+            height: 700px;
+            background: rgb(60, 60, 60);
+            color: white;
+            width: 800px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -350px;
+            margin-left: -400px;
+            padding-bottom: 20px;
+            display: none;
+        }
+        
+        #warn_n {
+            font-size: 18px;
+            position: absolute;
+            top: 80px;
+            left: 220px;
+            overflow-x: hidden;
+        }
+        
+        #slay_button {
+            font-size: 12px;
+            position: absolute;
+            top: 601px;
+            left: 222px;
+            width: 57.7px;
+        }
+        
+        #revive_button {
+            font-size: 11px;
+            position: absolute;
+            top: 601px;
+            left: 292px;
+            width: 57.7px;
+            height: 34.4px;
+        }
+        
+        #freeze_button {
+            font-size: 12px;
+            position: absolute;
+            top: 601px;
+            left: 362px;
+            width: 70.7px;
+        }
+        
+        #warn_button {
+            font-size: 12px;
+            position: absolute;
+            top: 380px;
+            left: 650px;
+        }
+        
+        #kick_button {
+            font-size: 12px;
+            position: absolute;
+            top: 420px;
+            left: 650px;
+            width: 57.7px;
+        }
+        
+        #ban_button {
+            font-size: 12px;
+            position: absolute;
+            top: 460px;
+            left: 650px;
+            width: 57.7px;
+        }
+        
+        #bring_button {
+            font-size: 12px;
+            position: absolute;
+            top: 519px;
+            left: 222px;
+            width: 57.7px;
+        }
+        
+        #goto_button {
+            font-size: 12px;
+            position: absolute;
+            top: 519px;
+            left: 292px;
+            width: 57.7px;
+        }
+        
+        #return_button {
+            font-size: 12px;
+            position: absolute;
+            top: 519px;
+            left: 362px;
+            width: 70.7px;
+        }
+        
+        #noclip_button {
+            font-size: 12px;
+            position: absolute;
+            top: 560px;
+            left: 362px;
+            width: 70.7px;
+        }
+        
+        #visibility_button {
+            font-size: 12px;
+            position: absolute;
+            top: 560px;
+            left: 222px;
+            width: 128px;
+        }
+        
+        #jail_input {
+            font-size: 12px;
+            position: absolute;
+            top: 642px;
+            left: 222px;
+            width: 75px;
+        }
+        
+        #jail_button {
+            font-size: 12px;
+            position: absolute;
+            top: 642px;
+            left: 302px;
+            width: 65.4;
+            height: 31.5px;
+        }
+        
+        #unjail_button {
+            font-size: 12px;
+            position: absolute;
+            top: 642px;
+            left: 362px;
+            width: 70.7px;
+        }
+        
+        #money_amount {
+            font-size: 12px;
+            position: absolute;
+            top: 519px;
+            left: 500px;
+            width: 100px;
+        }
+        
+        #money_select {
+            font-size: 12px;
+            position: absolute;
+            top: 519px;
+            left: 606px;
+            width: 100px;
+        }
+        
+        #money_button {
+            font-size: 12px;
+            position: absolute;
+            top: 519px;
+            left: 712px;
+            width: 57.7px;
+            height: 31.5px;
+        }
+        
+        #job_name {
+            font-size: 12px;
+            position: absolute;
+            top: 560px;
+            left: 500px;
+            width: 100px;
+        }
+        
+        #job_grade {
+            font-size: 12px;
+            position: absolute;
+            top: 560px;
+            left: 606px;
+            width: 100px;
+        }
+        
+        #job_button {
+            font-size: 12px;
+            position: absolute;
+            top: 560px;
+            left: 712px;
+            width: 57.7px;
+            height: 31.5px;
+        }
+        
+        #group_select {
+            font-size: 12px;
+            position: absolute;
+            top: 601px;
+            left: 606px;
+            width: 100px;
+        }
+        
+        #group_button {
+            font-size: 12px;
+            position: absolute;
+            top: 601px;
+            left: 712px;
+            width: 57.7px;
+            height: 31.5px;
+        }
+        
+        #bring_all {
+            font-size: 12px;
+            position: absolute;
+            top: 100px;
+            left: 20px;
+            width: 150px;
+            height: 40px;
+        }
+        
+        #slay_all {
+            font-size: 12px;
+            position: absolute;
+            top: 100px;
+            left: 180px;
+            width: 150px;
+            height: 40px;
+        }
+        
+        #revive_all {
+            font-size: 12px;
+            font-size: 12px;
+            position: absolute;
+            top: 100px;
+            left: 340px;
+            width: 150px;
+            height: 40px;
+        }
+        
+        #freeze_all {
+            font-size: 12px;
+            font-size: 12px;
+            position: absolute;
+            top: 100px;
+            left: 500px;
+            width: 150px;
+            height: 40px;
+        }
+        
+        #get_bans {
+            font-size: 12px;
+            position: absolute;
+            top: 190px;
+            left: 20px;
+            height: 35px;
+        }
+        
+        #bans_days {
+            font-size: 12px;
+            position: absolute;
+            top: 190px;
+            left: 100px;
+            width: 55px;
+            height: 35px;
+        }
+        
+        #name_ban {
+            font-size: 12px;
+            position: absolute;
+            top: 190px;
+            left: 160px;
+            width: 120px;
+            height: 35px;
+        }
+        
+        #reason_textarea {
+            word-wrap: break-word;
+            position: absolute;
+            top: 380px;
+            left: 222px;
+            width: 400px;
+            height: 115px;
+            -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.19);
+        }
+        
+        #ban_delete {
+            font-size: 10px;
+        }
+        
+        .warn {
+            font-size: 12px;
+            word-wrap: break-word;
+            overflow: auto;
+        }
+        
+        .ban {
+            font-size: 12px;
+            word-wrap: break-word;
+            overflow: auto;
+        }
+        
+        .table_time {
+            max-width: 50px;
+        }
+        
+        .table_admin {
+            max-width: 50px;
+        }
+        
+        .table_reason {
+            max-width: 200px;
+        }
+        
+        .table_button {
+            font-size: 10px;
+        }
+        
+        .ban_table_time {
+            max-width: 100px;
+        }
+        
+        .ban_table_admin {
+            width: 80px;
+        }
+        
+        .ban_table_reason {
+            max-width: 250px;
+        }
+        
+        .limit {
+            width: 760px;
+        }
+        
+        .warn_table {
+            width: 560px;
+            height: 240px;
+            color: black;
+        }
+        
+        .ban_table {
+            width: 760px;
+            height: 450px;
+        }
+        
+        #warn_menu {
+            overflow: auto;
+            position: absolute;
+            display: none;
+            top: 120px;
+            left: 222px;
+            width: 560px;
+            height: 240px;
+            background: white;
+            -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.19);
+        }
+        
+        #bans_menu {
+            overflow: auto;
+            position: absolute;
+            display: none;
+            top: 240px;
+            left: 20px;
+            width: 760px;
+            height: 450px;
+            background: white;
+            -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.19);
+        }
+        
+        #list {
+            display: inline-block;
+            margin-bottom: 100px;
+            width: 200px;
+            height: 640px;
+            overflow-x: hidden;
+            -webkit-box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
+        }
+        
+        .player {
+            width: 100%;
+            text-weight: bold;
+            text-indent: 10px;
+            padding: 5px;
+        }
+        
+        .player:nth-child(odd) {
+            background: -webkit-linear-gradient(right, transparent 0%, rgb(85, 85, 85) 100%);
+        }
+        
+        .player.selected {
+            background: -webkit-linear-gradient(right, transparent 0%, rgb(116, 214, 219) 100%);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="admin">
+        <div id="topbar">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+                <a class="navbar-brand" href="#">Admin Panel</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse text-center" id="navbarColor02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active" id="client_li">
+                            <a class="nav-link" href="#" id="clients">Jugadores</span></a>
+                        </li>
+                        <!-- <li class="nav-item" id="server_li">
+                  <a class="nav-link" href="#" id="server">Servidor</a>
+                </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="close">X</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div id="notify_container"></div>
+
+        <div id="clients_container">
+            <div id="list"></div>
+            <h3 id="warn_n"></h3>
+            <div id="warn_menu"></div>
+            <div id="apply_menu"></div>
+        </div>
+
+        <div id="server_container">
+            <div id="button_container"></div>
+            <div id="bans_menu"></div>
+        </div>
+
+    </div>
+
+    <br>
+
+</body>
+<script src="jquery.js"></script>
+<script src="listener.js"></script>
+
+</html>

@@ -1,17 +1,6 @@
-@font-face {
-	font-family: bankgothic;
-	src: url('../fonts/bankgothic.ttf');
-}
-
-@font-face {
-	font-family: pcdown;
-	src: url('../fonts/pdown.ttf');
-}
-
 #controls {
-	font-family: Trebuchet MS;
-	font-size: 3em;
-	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
 	position: absolute;
 	bottom: 40;
 	right: 40;
@@ -22,22 +11,46 @@
 }
 
 .dialog {
-	font-family: Trebuchet MS;
-	background-color: #000000;
-	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	position: relative;
+  background: #141821;
+  color: white;
 	position: absolute;
 	overflow: hidden;
 	top: 50%;
 	left: 50%;
-	width: 600px;
-	height: 112px;
+	width: 300px;
+	height: 210px;
 	transform: translate(-50%, -50%);
-	border-radius: 10px;
-  
-  border-top: 5px solid #000000;
-  border-left: 5px solid #000000;
-  border-right: 5px solid #000000;
-  border-bottom: 5px solid #000000;
+	border-radius: 8px;
+  animation: fadeIn 1.1s;
+}
+
+.title {
+	margin-top: 25px;
+	margin-bottom: 25px;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.subtitle {
+	margin-top: 10px;
+	margin-left: 25px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.748);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.65rem;
+    font-weight: bold;
+}
+
+.head {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
 }
 
 .dialog.big {
@@ -45,12 +58,12 @@
 }
 
 .dialog .head {
-	background-color: rgba(170, 0, 176, 0.9);
+	background-color: #ffffff;
 	text-align: center;
 	height: 40px;
 }
 
-.dialog .head span:before {
+.dialog .head span::before {
 	content: "";
 	display: inline-block;
 	height: 100%;
@@ -58,79 +71,58 @@
 }
 
 .dialog input[type="text"] {
-	width: 100%;
-  text-indent: 12px;
+	width: 84%;
 	height: 32px;
   outline: 0;
-  border: 0;
-  border-bottom: 10px solid #000000;
-  transition: all 0.2s ease-in-out;
+  background: #1f2533;
+  border-radius: 5px;
+  border: solid #5a0d91;
+  border-width: 0.1px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: #ffffff;
+  font-weight: bold;
+  position: relative;
+
+  font-size: 11px;
+  color: rgb(255, 255, 255);
 }
 
-.dialog input[type="text"]:active, .dialog input[type="text"]:hover {
-  color: black;
-  background: #c4c4c4;
-}
 
 .dialog textarea {
 	width: 100%;
 	height: 128px;
 }
 
-.dialog button[name="submit"] {
-	width: 49.6%;
-	height: 32px;
-  border: 1px solid #31af43;
-  font-weight: 600;
-  color: #31af43;
-  border-radius: 3px;
-  background: 0;
-  outline: 0;
-  transition: all 0.1s ease-in-out;
-}
-
 .dialog button {
-  z-index: 9999;
-	transform: translate(-0.0%, 20%);
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 30px;
+	border: 0;
+	height: 29px;
+	color: rgb(250, 250, 250);
+	font-weight: bold;
+	position: relative;
+	width: 20%;
+	border-radius: 3px;
+	outline: 0;
 }
 
-.dialog button[name="cancel"] {
-	width: 49.6%;
-	height: 32px;
-  border: 1px solid #af3131;
-  font-weight: 600;
-  color: #af3131;
-  border-radius: 3px;
-  outline: 0;
-  background: 0;
-  transition: all 0.1s ease-in-out;
-}
-
-.dialog button[name="cancel"]:hover {
-  color: #fff;
-  border: 1px solid #fff;
-  letter-spacing: 2px;
+.dialog button[name="submit"] {
+  margin-left: 40%;
+  background-color: rgba(88, 218, 76, 0.8);
 }
 
 .dialog button[name="submit"]:hover {
-  color: #fff;
-  border: 1px solid #fff;
-  letter-spacing: 2px;
-}
-
-.head {
-  margin-top: -12px;
-	display: flex;
-	flex-basis: 100%;
-	align-items: center;
-	color: #fff;
+  animation: pulse_green 1s infinite;
+  background-color: rgba(88, 218, 76, 0.6);
 }
 
 .head::before,
 .head::after {
 	content: "";
 	flex-grow: 1;
-	background: #fff;
+	background: #1f2533;
 	height: 2px;
 	margin: 0px 3px;
 }

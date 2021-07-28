@@ -6,6 +6,7 @@ Citizen.CreateThread(function()
 	GUI.Time          = 0
 	local MenuType    = 'dialog'
 	local OpenedMenus = {}
+	local soundOn = true
 
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
@@ -81,8 +82,11 @@ Citizen.CreateThread(function()
 			-- Don't post if the value is negative or if it's 0
 			if post then
 				menu.submit(data, menu)
+				if soundOn == true then
+					PlaySound(0, "Menu_Accept", "Phone_SoundSet_Default", 0, 0, 1);
+				end
 			else
-				ESX.ShowNotification('That input is invalid!')
+				ESX.ShowNotification('Esa entrada no es válida!')
 			end
 		end
 
@@ -94,6 +98,9 @@ Citizen.CreateThread(function()
 
 		if menu.cancel ~= nil then
 			menu.cancel(data, menu)
+			if soundOn == true then
+				PlaySound(0, "Click_Fail", "WEB_NAVIGATION_SOUNDS_PHONE", 0, 0, 1);			
+			end
 		end
 
 		cb('OK')

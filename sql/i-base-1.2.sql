@@ -719,7 +719,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT IGNORE INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `skin`, `status`, `is_dead`, `phone_number`, `last_property`) VALUES
 	('b449807e8ed169136d7357be7390e700da991dc6', '{"black_money":0,"bank":50000,"money":0}', 'user', '[]', 'unemployed', 0, '[]', '{"z":31.2,"heading":205.8,"x":-269.4,"y":-955.3}', NULL, NULL, NULL, NULL, NULL, NULL, '[{"val":999000,"name":"hunger","percent":99.9},{"val":999250,"name":"thirst","percent":99.925}]', 0, '756-1597', NULL),
-	('f0e176ec5a87adad3df08d798b614090645a655a', '{"black_money":0,"bank":50320,"money":0}', 'admin', '[]', 'ambulance', 1, '[]', '{"z":29.4,"heading":174.8,"x":23.2,"y":-949.7}', 'Jhon', 'Jhon', '12/12/1988', 'm', 82, '{"age_1":0,"chest_2":0,"bodyb_3":-1,"chin_2":0,"shoes_1":0,"dad":0,"nose_2":0,"nose_4":0,"torso_2":0,"watches_1":-1,"face_md_weight":50,"hair_color_2":0,"mask_1":0,"jaw_2":0,"makeup_1":0,"neck_thickness":0,"moles_1":0,"eyebrows_5":0,"glasses_2":0,"eyebrows_3":0,"eyebrows_4":0,"age_2":0,"hair_color_1":0,"nose_3":0,"ears_2":0,"hair_2":0,"chest_1":0,"beard_4":0,"skin_md_weight":50,"complexion_2":0,"cheeks_2":0,"helmet_2":0,"sun_1":0,"nose_6":0,"tshirt_1":0,"blemishes_1":0,"sex":0,"lipstick_3":0,"complexion_1":0,"ears_1":-1,"bracelets_1":-1,"lipstick_1":0,"chin_3":0,"bracelets_2":0,"pants_2":0,"bodyb_1":-1,"lipstick_2":0,"bodyb_4":0,"glasses_1":0,"eye_color":0,"blush_2":0,"arms":0,"chin_1":0,"helmet_1":-1,"bodyb_2":0,"nose_5":0,"bags_1":0,"blemishes_2":0,"chain_1":0,"makeup_3":0,"bags_2":0,"eyebrows_2":0,"arms_2":0,"chin_4":0,"makeup_4":0,"makeup_2":0,"bproof_1":0,"hair_1":0,"pants_1":0,"lipstick_4":0,"mask_2":0,"tshirt_2":0,"nose_1":0,"moles_2":0,"beard_1":0,"eye_squint":0,"cheeks_1":0,"blush_3":0,"jaw_1":0,"decals_1":0,"beard_3":0,"blush_1":0,"beard_2":0,"bproof_2":0,"cheeks_3":0,"lip_thickness":0,"eyebrows_1":0,"chain_2":0,"eyebrows_6":0,"shoes_2":0,"chest_3":0,"decals_2":0,"torso_1":0,"watches_2":0,"sun_2":0,"mom":21}', '[{"val":469600,"name":"hunger","percent":46.96},{"val":602200,"name":"thirst","percent":60.22}]', 0, '118-9665', NULL);
+	('f0e176ec5a87adad3df08d798b614090645a655a', '{"bank":50320,"black_money":0,"money":0}', 'admin', '[]', 'ambulance', 1, '[]', '{"x":23.2,"z":29.4,"heading":174.8,"y":-949.7}', 'Jhon', 'Jhon', '12/12/1988', 'm', 82, '{"age_1":0,"chest_2":0,"bodyb_3":-1,"chin_2":0,"shoes_1":0,"dad":0,"nose_2":0,"nose_4":0,"torso_2":0,"watches_1":-1,"face_md_weight":50,"hair_color_2":0,"mask_1":0,"jaw_2":0,"makeup_1":0,"neck_thickness":0,"moles_1":0,"eyebrows_5":0,"glasses_2":0,"eyebrows_3":0,"eyebrows_4":0,"age_2":0,"hair_color_1":0,"nose_3":0,"ears_2":0,"hair_2":0,"chest_1":0,"beard_4":0,"skin_md_weight":50,"complexion_2":0,"cheeks_2":0,"helmet_2":0,"sun_1":0,"nose_6":0,"tshirt_1":0,"blemishes_1":0,"sex":0,"lipstick_3":0,"complexion_1":0,"ears_1":-1,"bracelets_1":-1,"lipstick_1":0,"chin_3":0,"bracelets_2":0,"pants_2":0,"bodyb_1":-1,"lipstick_2":0,"bodyb_4":0,"glasses_1":0,"eye_color":0,"blush_2":0,"arms":0,"chin_1":0,"helmet_1":-1,"bodyb_2":0,"nose_5":0,"bags_1":0,"blemishes_2":0,"chain_1":0,"makeup_3":0,"bags_2":0,"eyebrows_2":0,"arms_2":0,"chin_4":0,"makeup_4":0,"makeup_2":0,"bproof_1":0,"hair_1":0,"pants_1":0,"lipstick_4":0,"mask_2":0,"tshirt_2":0,"nose_1":0,"moles_2":0,"beard_1":0,"eye_squint":0,"cheeks_1":0,"blush_3":0,"jaw_1":0,"decals_1":0,"beard_3":0,"blush_1":0,"beard_2":0,"bproof_2":0,"cheeks_3":0,"lip_thickness":0,"eyebrows_1":0,"chain_2":0,"eyebrows_6":0,"shoes_2":0,"chest_3":0,"decals_2":0,"torso_1":0,"watches_2":0,"sun_2":0,"mom":21}', '[{"percent":46.26,"name":"hunger","val":462600},{"percent":59.695,"name":"thirst","val":596950}]', 0, '118-9665', NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.user_licenses
@@ -1056,41 +1056,7 @@ INSERT IGNORE INTO `weashops` (`id`, `zone`, `item`, `price`) VALUES
 	(3, 'GunShop', 'WEAPON_FLASHLIGHT', 60),
 	(4, 'BlackWeashop', 'WEAPON_FLASHLIGHT', 70),
 	(5, 'GunShop', 'WEAPON_MACHETE', 90),
-	(6, 'BlackWeashop', 'WEAPON_MACHETE', 110),
-	(7, 'GunShop', 'WEAPON_NIGHTSTICK', 150),
-	(8, 'BlackWeashop', 'WEAPON_NIGHTSTICK', 150),
-	(9, 'GunShop', 'WEAPON_BAT', 100),
-	(10, 'BlackWeashop', 'WEAPON_BAT', 100),
-	(11, 'GunShop', 'WEAPON_STUNGUN', 50),
-	(12, 'BlackWeashop', 'WEAPON_STUNGUN', 50),
-	(13, 'GunShop', 'WEAPON_MICROSMG', 1400),
-	(14, 'BlackWeashop', 'WEAPON_MICROSMG', 1700),
-	(15, 'GunShop', 'WEAPON_PUMPSHOTGUN', 3400),
-	(16, 'BlackWeashop', 'WEAPON_PUMPSHOTGUN', 3500),
-	(17, 'GunShop', 'WEAPON_ASSAULTRIFLE', 10000),
-	(18, 'BlackWeashop', 'WEAPON_ASSAULTRIFLE', 11000),
-	(19, 'GunShop', 'WEAPON_SPECIALCARBINE', 15000),
-	(20, 'BlackWeashop', 'WEAPON_SPECIALCARBINE', 16500),
-	(21, 'GunShop', 'WEAPON_SNIPERRIFLE', 22000),
-	(22, 'BlackWeashop', 'WEAPON_SNIPERRIFLE', 24000),
-	(23, 'GunShop', 'WEAPON_FIREWORK', 18000),
-	(24, 'BlackWeashop', 'WEAPON_FIREWORK', 20000),
-	(25, 'GunShop', 'WEAPON_GRENADE', 500),
-	(26, 'BlackWeashop', 'WEAPON_GRENADE', 650),
-	(27, 'GunShop', 'WEAPON_BZGAS', 200),
-	(28, 'BlackWeashop', 'WEAPON_BZGAS', 350),
-	(29, 'GunShop', 'WEAPON_FIREEXTINGUISHER', 100),
-	(30, 'BlackWeashop', 'WEAPON_FIREEXTINGUISHER', 100),
-	(31, 'GunShop', 'WEAPON_BALL', 50),
-	(32, 'BlackWeashop', 'WEAPON_BALL', 50),
-	(33, 'GunShop', 'WEAPON_SMOKEGRENADE', 100),
-	(34, 'BlackWeashop', 'WEAPON_SMOKEGRENADE', 100),
-	(35, 'BlackWeashop', 'WEAPON_APPISTOL', 1100),
-	(36, 'BlackWeashop', 'WEAPON_CARBINERIFLE', 12000),
-	(37, 'BlackWeashop', 'WEAPON_HEAVYSNIPER', 30000),
-	(38, 'BlackWeashop', 'WEAPON_MINIGUN', 45000),
-	(39, 'BlackWeashop', 'WEAPON_RAILGUN', 50000),
-	(40, 'BlackWeashop', 'WEAPON_STICKYBOMB', 500);
+	(6, 'BlackWeashop', 'WEAPON_MACHETE', 110);
 /*!40000 ALTER TABLE `weashops` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

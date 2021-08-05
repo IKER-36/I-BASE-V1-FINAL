@@ -51,8 +51,8 @@ Config.Hospitals = {
 
         Vehicles = {
             {
-                Spawner = vector3(307.7, -1433.4, 30.0),
-                InsideShop = vector3(446.7, -1355.6, 43.5),
+                Spawner = vector3(299.68, -573.99, 43.16),
+                InsideShop = vector3(294.03, -605.14, 43.21),
                 Marker = {
                     type = 36,
                     x = 1.0,
@@ -66,17 +66,17 @@ Config.Hospitals = {
                 },
                 SpawnPoints = {
                     {
-                        coords = vector3(297.2, -1429.5, 29.8),
+                        coords = vector3(285.58, -570.77, 43.14),
                         heading = 227.6,
                         radius = 4.0
                     },
                     {
-                        coords = vector3(294.0, -1433.1, 29.8),
+                        coords = vector3(285.58, -570.77, 43.14),
                         heading = 227.6,
                         radius = 4.0
                     },
                     {
-                        coords = vector3(309.4, -1442.5, 29.8),
+                        coords = vector3(285.58, -570.77, 43.14),
                         heading = 227.6,
                         radius = 6.0
                     }
@@ -241,28 +241,28 @@ Config.Hospitals = {
 
 Config.AuthorizedVehicles = {
     car = {
-        ambulance = {{model = 'ambulance', price = 5000}},
+        ambulance = {{model = 'ambulance', price = 0}},
 
-        doctor = {{model = 'ambulance', price = 4500}},
+        doctor = {{model = 'ambulance', price = 0}},
 
-        chief_doctor = {{model = 'ambulance', price = 3000}},
+        chief_doctor = {{model = 'ambulance', price = 0}},
 
-        boss = {{model = 'ambulance', price = 2000}}
+        boss = {{model = 'ambulance', price = 0}}
     },
 
     helicopter = {
         ambulance = {},
 
-        doctor = {{model = 'buzzard2', price = 150000}},
+        doctor = {{model = 'buzzard2', price = 0}},
 
         chief_doctor = {
-            {model = 'buzzard2', price = 150000},
-            {model = 'seasparrow', price = 300000}
+            {model = 'buzzard2', price = 0},
+            {model = 'seasparrow', price = 0}
         },
 
         boss = {
-            {model = 'buzzard2', price = 10000},
-            {model = 'seasparrow', price = 250000}
+            {model = 'buzzard2', price = 0},
+            {model = 'seasparrow', price = 0}
         }
     }
 }

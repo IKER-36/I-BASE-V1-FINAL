@@ -4,6 +4,8 @@ I made this simple base using es_extended 1 final (like 1.2) to bring a dev serv
 
 This is our oficial discord to contact us: 🤖 https://discord.gg/2cFWKz8GAA 🤖
 
+![repo](https://user-images.githubusercontent.com/63476973/131507298-2c83b2ed-d1be-4fb3-9850-35f7e41274ec.png)
+
 # Video How to Install
 
 https://www.youtube.com/watch?v=WxArPvqWCNc <br>

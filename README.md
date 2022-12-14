@@ -1,6 +1,6 @@
-# NEW BASE RELEASED HERE: https://github.com/IKER-36/i-Legacy 
+# ❗NEW BASE RELEASED HERE: https://github.com/IKER-36/i-Legacy ❗
 
-# THIS SERVER IS DESCONTINUED NOW
+# ❗THIS SERVER IS DESCONTINUED NOW❗
 
 
 

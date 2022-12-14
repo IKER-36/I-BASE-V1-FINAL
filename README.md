@@ -1,3 +1,12 @@
+# NEW BASE RELEASED HERE: https://github.com/IKER-36/i-Legacy 
+
+# THIS SERVER IS DESCONTINUED NOW
+
+
+
+
+
+
 # I-BASE-V1-FINAL
 
 I made this simple base using es_extended 1 final (like 1.2) to bring a dev server, It works perfectly to develop and improve it if you follow the installation steps. 😏
